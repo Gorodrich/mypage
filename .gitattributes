@@ -1,0 +1,9 @@
+# 改行コードはリポジトリ・作業コピーとも LF に固定(build.py の出力に合わせる)
+* text=auto eol=lf
+
+# バイナリ(改行変換・テキスト差分の対象外)
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.png   binary
+*.ico   binary

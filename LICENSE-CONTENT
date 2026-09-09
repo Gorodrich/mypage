@@ -1,0 +1,48 @@
+Content License — All Rights Reserved
+=====================================
+
+Copyright (c) 2026 Gorodrich. All rights reserved.
+
+Scope
+-----
+
+This file governs the *content and creative works* of this repository and the
+site published from it at https://56dri.ch — everything that is not source
+code and not third-party material.
+
+Covered by this "All Rights Reserved" notice, without limitation:
+
+- All prose and written text on the site and in the portfolio, in every
+  language (Japanese, English, Chinese, Korean), including the Markdown
+  source files such as `portfolio-content.*.md` and `CONTENT-GUIDE.md`.
+- The personal logo / word mark: `assets/goro_logo.svg` and any raster
+  derivative (`assets/favicon.ico`, `assets/apple-touch-icon.png`,
+  `assets/og.png`).
+- The business-card designs authored by the copyright holder:
+  `assets/名刺 ゴロードリヒ.svg` and the per-language card faces generated
+  from it in `assets/card/`.
+- Photographs, illustrations, and any other images that are the original
+  work of the copyright holder.
+- The name, likeness, and personal/contact information of the copyright
+  holder.
+
+Terms
+-----
+
+No license is granted. These works may not be copied, reproduced,
+redistributed, modified, translated, or used to create derivative works, in
+whole or in part, by any means, without the prior written permission of the
+copyright holder.
+
+Viewing the site in a web browser and ordinary browser caching are permitted.
+Short quotation for commentary, criticism, news reporting, or review is not
+restricted where permitted by applicable copyright law.
+
+The permissive license on the source code (`LICENSE`, MIT) does not extend to
+any work covered by this file. If you fork or reuse the code, replace all
+content, logos, card designs, and personal information with your own.
+
+Contact
+-------
+
+For permission requests: mail@56dri.ch

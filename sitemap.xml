@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://56dri.ch/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://56dri.ch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://56dri.ch/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://56dri.ch/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://56dri.ch/ko/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://56dri.ch/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://56dri.ch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://56dri.ch/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://56dri.ch/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://56dri.ch/ko/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://56dri.ch/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://56dri.ch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://56dri.ch/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://56dri.ch/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://56dri.ch/ko/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://56dri.ch/ko/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://56dri.ch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://56dri.ch/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://56dri.ch/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://56dri.ch/ko/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://56dri.ch/portfolio/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://56dri.ch/portfolio/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://56dri.ch/portfolio/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://56dri.ch/portfolio/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://56dri.ch/portfolio/ko/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://56dri.ch/portfolio/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://56dri.ch/portfolio/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://56dri.ch/portfolio/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://56dri.ch/portfolio/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://56dri.ch/portfolio/ko/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://56dri.ch/portfolio/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://56dri.ch/portfolio/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://56dri.ch/portfolio/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://56dri.ch/portfolio/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://56dri.ch/portfolio/ko/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://56dri.ch/portfolio/ko/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://56dri.ch/portfolio/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://56dri.ch/portfolio/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://56dri.ch/portfolio/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://56dri.ch/portfolio/ko/"/>
+    <priority>0.8</priority>
+  </url>
+</urlset>

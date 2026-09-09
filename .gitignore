@@ -1,0 +1,30 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# エディタ
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ツール
+node_modules/
+.claude/
+
+# make_images.py が実行時に取得するフォント(再取得可能)
+tools/_fontcache/
+
+# 開発時のみ使用する Primer 要約(公開不要 / THIRD-PARTY-NOTICES.md 参照)
+GitHub Primer Design System/
+
+# 内部の要件定義書・執筆用ドラフト(公開不要)
+portfolio-site-requirements.md
+portfolio-content.ja.md
+portfolio-content.template.md
+CONTENT-GUIDE.md

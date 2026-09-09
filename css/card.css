@@ -1,0 +1,151 @@
+/* ===========================================================================
+   トップページ(名刺カード)
+   =========================================================================== */
+
+.page--card {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bgColor-inset);   /* 名刺 SVG の台紙と同じ色 */
+}
+
+.stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--base-size-24);
+  padding: var(--space-lg) var(--space-lg) max(var(--base-size-24), env(safe-area-inset-bottom));
+}
+
+/* --- カードの寸法 ----------------------------------------------------------
+   仕上がり 55mm × 91mm の比率を厳守しつつ、ビューポートに収める。
+   高さ基準で決め、幅は aspect-ratio に任せる。                              */
+.scene {
+  --card-h: min(
+    calc(100svh - 244px),                 /* トップバー・操作系の高さを確保 */
+    calc((100vw - 2 * var(--space-lg)) * 91 / 55),
+    560px
+  );
+  height: var(--card-h);
+  aspect-ratio: 55 / 91;
+  perspective: 1600px;
+  perspective-origin: 50% 45%;
+}
+
+@media (min-width: 700px) and (min-height: 760px) {
+  .scene { --card-h: min(calc(100svh - 260px), 620px); }
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform var(--motion-duration-flip) var(--motion-easing-flip);
+  cursor: pointer;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+.card[data-face="info"] { transform: rotateY(180deg); }
+
+/* ドラッグ追従中はトランジションを切る(JS が --drag を更新する) */
+.card.is-dragging {
+  transition: none;
+  cursor: grabbing;
+}
+
+.card__face {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--borderRadius-medium);
+  overflow: hidden;
+  background: var(--bgColor-default);
+  box-shadow: var(--shadow-floating-small), var(--shadow-resting-medium);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.card__face--info { transform: rotateY(180deg); }
+
+.card__face > svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* --- 名刺 SVG 内のタイポグラフィ(build.py が付けるクラス) ----------------- */
+.bc-mono { font-family: var(--fontStack-monospace); }
+.bc-cjk  { font-family: var(--fontStack-cjk); }
+.bc-text { white-space: pre; }
+
+/* --- 名刺内のリンク -------------------------------------------------------- */
+.bc-link { cursor: pointer; }
+
+.bc-hit {
+  fill: transparent;
+  transition: fill var(--motion-transition-hover);
+}
+.bc-link:hover .bc-hit,
+.bc-link:focus-visible .bc-hit { fill: var(--bgColor-accent-muted); }
+
+.bc-link:hover .bc-text,
+.bc-link:focus-visible .bc-text { fill: var(--fgColor-accent); }
+.bc-link:hover .bc-icon,
+.bc-link:focus-visible .bc-icon { fill: var(--fgColor-accent); }
+
+.bc-link:focus { outline: none; }
+.bc-link:focus-visible .bc-hit,
+.bc-link:focus-visible .bc-cta-bg {
+  stroke: var(--focus-outlineColor);
+  stroke-width: 0.35;
+}
+.bc-link:active .bc-hit { fill: var(--base-color-blue-1); }
+
+/* ポートフォリオへの CTA ボタン */
+.bc-cta-bg {
+  fill: #0969da;
+  transition: fill var(--motion-transition-hover);
+}
+.bc-link--cta:hover .bc-cta-bg,
+.bc-link--cta:focus-visible .bc-cta-bg { fill: var(--borderColor-accent-emphasis); }
+.bc-link--cta:hover .bc-cta-label,
+.bc-link--cta:focus-visible .bc-cta-label { fill: #ffffff; }
+.bc-link--cta:active .bc-cta-bg { fill: var(--base-color-blue-1); }
+
+/* --- 操作系 ---------------------------------------------------------------- */
+.stage__controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  text-align: center;
+}
+
+.hint {
+  max-width: 24em;
+  text-wrap: pretty;
+  font: var(--text-caption-shorthand);
+  color: var(--fgColor-muted);
+}
+
+
+/* --- JavaScript 無効時 -----------------------------------------------------
+   フリップができないので、2 面を上下に並べて両方読めるようにする。          */
+.no-js .stage__controls { display: none; }
+.no-js .scene { height: auto; aspect-ratio: auto; perspective: none; }
+.no-js .card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--base-size-24);
+  height: auto;
+  transform: none !important;
+  transform-style: flat;
+  cursor: default;
+}
+.no-js .card__face {
+  position: static;
+  aspect-ratio: 55 / 91;
+  transform: none !important;
+  backface-visibility: visible;
+}
