@@ -164,6 +164,14 @@ def build_front(lang, *, interactive, portfolio_href="/portfolio/"):
                 '<a class="bc-link" href="%s"%s aria-label="%s">%s%s</a>'
                 % (E(info["href"]), rel, E("%s: %s" % (label, info["id"])), hit, row)
             )
+        if key == "email":
+            # Cloudflare の Email Address Obfuscation 除外マーカー。
+            # 有効なままだと mailto: とアドレス文字列が
+            # <span class="__cf_email__"> に置換され、SVG の中に <span> が
+            # 差し込まれる。HTML パーサは <span> を foreign content の
+            # breakout 要素として扱うため、そこで <svg> が閉じられ、
+            # 以降の連絡先と CTA ボタンがすべて描画されなくなる。
+            row = "<!--email_off-->%s<!--email_on-->" % row
         p.append(row)
 
     # --- ポートフォリオへの CTA ボタン -----------------------------------
