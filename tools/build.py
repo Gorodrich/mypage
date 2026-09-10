@@ -11,7 +11,7 @@
     /sitemap.xml
 
 アイコン・ロゴ・QR コードのパスデータは、提供された元の名刺 SVG
-(assets/名刺 ゴロードリヒ.svg)から実行時に抽出するので、
+(assets/card-source.svg)から実行時に抽出するので、
 元デザインとの差異が生まれません。
 """
 from __future__ import annotations
