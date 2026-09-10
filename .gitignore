@@ -16,6 +16,7 @@ venv/
 # ツール
 node_modules/
 .claude/
+CLAUDE.md
 
 # make_images.py が実行時に取得するフォント(再取得可能)
 tools/_fontcache/

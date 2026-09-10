@@ -47,6 +47,9 @@
   cursor: pointer;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
+  /* ドラッグで回すときに文字が選択されないようにする(リンクのクリックは維持) */
+  -webkit-user-select: none;
+  user-select: none;
 }
 .card[data-face="info"] { transform: rotateY(180deg); }
 
