@@ -19,13 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-This MIT license covers ONLY the source code of this repository: the markup
-structure of the HTML files, the stylesheets in `css/`, the scripts in `js/`,
-and the build scripts in `tools/`.
-
-It does NOT cover the site content and creative works, which are All Rights
-Reserved — see `LICENSE-CONTENT`. It does NOT cover third-party material
-bundled or referenced by the site — see `THIRD-PARTY-NOTICES.md`.
