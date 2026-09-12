@@ -127,6 +127,9 @@ UI = {
         "period": "期間",
         "role": "役割",
         "stack": "使用技術",
+        "notfound_heading": "ページが見つかりません",
+        "notfound_body": "お探しのページは移動または削除された可能性があります。",
+        "notfound_home": "ホームに戻る",
     },
     "en": {
         "card_title": "GORODRICH | Digital Business Card",
@@ -156,6 +159,9 @@ UI = {
         "period": "Period",
         "role": "Role",
         "stack": "Stack",
+        "notfound_heading": "Page not found",
+        "notfound_body": "The page you're looking for may have been moved or removed.",
+        "notfound_home": "Back to home",
     },
     "zh": {
         "card_title": "五郎德里希 | 电子名片",
@@ -185,6 +191,9 @@ UI = {
         "period": "期间",
         "role": "角色",
         "stack": "技术栈",
+        "notfound_heading": "页面未找到",
+        "notfound_body": "您要访问的页面可能已被移动或删除。",
+        "notfound_home": "返回首页",
     },
     "ko": {
         "card_title": "고로드리히 | 디지털 명함",
@@ -214,5 +223,8 @@ UI = {
         "period": "기간",
         "role": "역할",
         "stack": "기술",
+        "notfound_heading": "페이지를 찾을 수 없습니다",
+        "notfound_body": "찾으시는 페이지가 이동되었거나 삭제되었을 수 있습니다.",
+        "notfound_home": "홈으로 돌아가기",
     },
 }

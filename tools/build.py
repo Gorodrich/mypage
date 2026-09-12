@@ -566,6 +566,92 @@ def build_portfolio_page(lang):
 
 
 # ---------------------------------------------------------------------------
+# 404 ページ(GitHub Pages がルートの 404.html を自動表示する)
+#   訪問者の言語が分からないうえ、404 は 1 ページしかないので他ページのように
+#   言語別 URL には分けられない。右上の言語メニューは他ページと見た目を揃えつつ、
+#   選択は <input type="radio"> + CSS :has() だけで切り替える(JS 不使用。
+#   404.html でも JS 自体は動くが、素の CSS だけで完結する方が壊れにくい)。
+#   :has() 非対応の古いブラウザでは既定の日本語表示のまま(メニューは開けるが
+#   切り替わらない)にフォールバックする。
+# ---------------------------------------------------------------------------
+def notfound_lang_menu():
+    items = "".join(
+        '<li><label class="langmenu__item" data-item-lang="{lang}">'
+        '<input class="langmenu__radio sr-only" type="radio" name="nf-lang" '
+        'id="nf-{lang}" value="{lang}"{checked}>'
+        '<span class="langmenu__check" aria-hidden="true">&#10003;</span>{label}</label></li>'
+        .format(lang=lang, checked=' checked' if lang == "ja" else "",
+                label=E(C.LANG_META[lang]["label"]))
+        for lang in C.LANGS
+    )
+    labels = "".join(
+        '<span class="langmenu__label" data-lang-label="{lang}">{label}</span>'
+        .format(lang=lang, label=E(C.UI[lang]["lang_menu"]))
+        for lang in C.LANGS
+    )
+    menu = E(C.UI["ja"]["lang_menu"])
+    return """<details class="langmenu" data-langmenu>
+        <summary class="langmenu__button" aria-label="{menu}">
+          <svg class="langmenu__globe" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.25"><circle cx="8" cy="8" r="6.3"/><ellipse cx="8" cy="8" rx="2.7" ry="6.3"/><path d="M2 5.8h12M2 10.2h12"/></svg>
+          {labels}
+          <svg class="langmenu__caret" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5 8 10.5l4-4"/></svg>
+        </summary>
+        <div class="langmenu__panel">
+          <p class="langmenu__title">{menu}</p>
+          <ul class="langmenu__list">{items}</ul>
+        </div>
+      </details>""".format(menu=menu, labels=labels, items=items)
+
+
+def notfound_content_block(lang):
+    ui = C.UI[lang]
+    return """
+      <div class="notfound__content" data-lang-content="{lang}" lang="{hl}">
+        <h1 class="notfound__heading">{heading}</h1>
+        <p class="notfound__body">{body}</p>
+        <a class="textlink" href="{href}">{home}<span aria-hidden="true"> &rarr;</span></a>
+      </div>""".format(
+        lang=lang, hl=C.LANG_META[lang]["hreflang"],
+        heading=E(ui["notfound_heading"]), body=E(ui["notfound_body"]),
+        href=card_url(lang), home=E(ui["notfound_home"]),
+    )
+
+
+def build_404_page():
+    blocks = "".join(notfound_content_block(lang) for lang in C.LANGS)
+    return """<!doctype html>
+<html lang="ja" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <script>document.documentElement.classList.remove('no-js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>404 | GORODRICH</title>
+  <meta name="description" content="{desc}">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0969da">
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/MonaSansMonoVF.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/portfolio.css">
+</head>
+<body class="page page--notfound" data-lang="ja">
+  <header class="topbar">
+    <a class="topbar__brand" href="/">GORODRICH</a>
+    {menu}
+  </header>
+  <main class="notfound">
+    <div class="wrap notfound__inner">
+      <p class="notfound__code" aria-hidden="true">404</p>
+      <div class="notfound__stage">{blocks}</div>
+    </div>
+  </main>
+</body>
+</html>
+""".format(desc=E(C.UI["ja"]["notfound_body"]), menu=notfound_lang_menu(), blocks=blocks)
+
+
+# ---------------------------------------------------------------------------
 def write(relpath, body):
     path = os.path.join(ROOT, relpath)
     os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -606,6 +692,7 @@ def main():
         written.append(write("portfolio/" + C.LANG_META[lang]["pf_prefix"] + "index.html",
                              build_portfolio_page(lang)))
     written.append(write("sitemap.xml", build_sitemap()))
+    written.append(write("404.html", build_404_page()))
     written.append(write("robots.txt",
                          "User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n"
                          % C.SITE["origin"]))

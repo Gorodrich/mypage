@@ -469,3 +469,94 @@ html[lang="en"] .hero__title {
   letter-spacing: 0.14em;
   color: var(--fgColor-muted);
 }
+
+/* ===========================================================================
+   404 ページ
+   =========================================================================== */
+.page--notfound {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.notfound {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.notfound__inner {
+  padding-block: var(--base-size-48);
+  text-align: center;
+}
+
+.notfound__code {
+  font-family: var(--fontStack-monospace);
+  font-size: clamp(3.5rem, 16vw, 6rem);
+  font-weight: var(--base-text-weight-semibold);
+  letter-spacing: 0.04em;
+  color: var(--fgColor-accent);
+}
+
+.notfound__stage {
+  max-width: 40ch;
+  margin-inline: auto;
+  margin-top: var(--base-size-32);
+}
+
+/* 既定は日本語表示(:has() 非対応ブラウザでのフォールバックでもある) */
+.notfound__content { display: none; }
+.notfound__content[data-lang-content="ja"] { display: block; }
+
+.notfound__content:lang(zh-Hans) { font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; }
+.notfound__content:lang(ko) { font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+
+.notfound__heading { font: var(--text-title-shorthand-medium); }
+
+.notfound__body {
+  margin-top: var(--space-sm);
+  font: var(--text-body-shorthand-large);
+  color: var(--fgColor-muted);
+}
+
+.notfound__content .textlink {
+  display: inline-block;
+  margin-top: var(--base-size-24);
+}
+
+/* --- 言語メニューでの切り替え(<input type="radio"> + :has()、JS 不使用) ----- */
+.langmenu__radio { flex: none; }
+
+.langmenu__check { opacity: 0; }
+.langmenu__item:has(.langmenu__radio:checked) { font-weight: var(--base-text-weight-semibold); }
+.langmenu__item:has(.langmenu__radio:checked) .langmenu__check { opacity: 1; }
+.langmenu__item:has(.langmenu__radio:focus-visible) {
+  outline: var(--borderWidth-thick) solid var(--focus-outlineColor);
+  outline-offset: 2px;
+  border-radius: var(--borderRadius-small);
+}
+
+.langmenu__label { display: none; }
+.langmenu__label[data-lang-label="ja"] { display: inline; }
+
+.page--notfound:has(#nf-en:checked) .notfound__content:not([data-lang-content="en"]),
+.page--notfound:has(#nf-zh:checked) .notfound__content:not([data-lang-content="zh"]),
+.page--notfound:has(#nf-ko:checked) .notfound__content:not([data-lang-content="ko"]) {
+  display: none;
+}
+.page--notfound:has(#nf-en:checked) .notfound__content[data-lang-content="en"],
+.page--notfound:has(#nf-zh:checked) .notfound__content[data-lang-content="zh"],
+.page--notfound:has(#nf-ko:checked) .notfound__content[data-lang-content="ko"] {
+  display: block;
+}
+
+.page--notfound:has(#nf-en:checked) .langmenu__label:not([data-lang-label="en"]),
+.page--notfound:has(#nf-zh:checked) .langmenu__label:not([data-lang-label="zh"]),
+.page--notfound:has(#nf-ko:checked) .langmenu__label:not([data-lang-label="ko"]) {
+  display: none;
+}
+.page--notfound:has(#nf-en:checked) .langmenu__label[data-lang-label="en"],
+.page--notfound:has(#nf-zh:checked) .langmenu__label[data-lang-label="zh"],
+.page--notfound:has(#nf-ko:checked) .langmenu__label[data-lang-label="ko"] {
+  display: inline;
+}
