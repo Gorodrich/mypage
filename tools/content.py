@@ -56,8 +56,8 @@ CARD = {
         "name_main": {"text": "ゴロードリヒ", "font": "cjk",  "size": 6.2, "weight": 600, "ls": 0},
         "name_sub":  {"text": "GORODRICH",   "font": "mono", "size": 2.5, "weight": 400, "ls": 0.219},
         "title": [
-            {"text": "法学徒 ×",           "font": "cjk", "size": 2.4, "weight": 500},
-            {"text": "インフラエンジニア", "font": "cjk", "size": 2.4, "weight": 500},
+            {"text": "法学徒 ×",         "font": "cjk", "size": 2.4, "weight": 500},
+            {"text": "サーバー管理者",   "font": "cjk", "size": 2.4, "weight": 500},
         ],
         "affiliation": {"text": "中央大学 法学部 法律学科", "font": "cjk", "size": 2.7, "weight": 400},
         "tagline":     {"text": "昼法夜鯖 - 昼は法律、夜は鯖缶", "font": "cjk", "size": 2.0, "weight": 400, "ls": 0.02},
@@ -66,8 +66,8 @@ CARD = {
         "name_main": {"text": "GORODRICH",     "font": "mono", "size": 5.0, "weight": 600, "ls": 0.06},
         "name_sub":  {"text": "ゴロードリヒ",   "font": "cjk",  "size": 2.5, "weight": 400, "ls": 0.02},
         "title": [
-            {"text": "Law Student ×",           "font": "mono", "size": 2.3, "weight": 500},
-            {"text": "Infrastructure Engineer", "font": "mono", "size": 2.3, "weight": 500},
+            {"text": "Law Student ×",       "font": "mono", "size": 2.3, "weight": 500},
+            {"text": "Server Administrator", "font": "mono", "size": 2.3, "weight": 500},
         ],
         "affiliation": {"text": "Chuo University, Faculty of Law", "font": "mono", "size": 2.3, "weight": 400},
         "tagline":     {"text": "Law by Day, Ops by Night", "font": "mono", "size": 2.2, "weight": 400, "ls": 0},
@@ -76,8 +76,8 @@ CARD = {
         "name_main": {"text": "五郎德里希",  "font": "cjk",  "size": 6.2, "weight": 600, "ls": 0},
         "name_sub":  {"text": "GORODRICH", "font": "mono", "size": 2.5, "weight": 400, "ls": 0.219},
         "title": [
-            {"text": "法学院学生 ×",   "font": "cjk", "size": 2.4, "weight": 500},
-            {"text": "基础架构工程师", "font": "cjk", "size": 2.4, "weight": 500},
+            {"text": "法学院学生 ×", "font": "cjk", "size": 2.4, "weight": 500},
+            {"text": "服务器管理员", "font": "cjk", "size": 2.4, "weight": 500},
         ],
         "affiliation": {"text": "中央大学 法学院 法律学系", "font": "cjk", "size": 2.7, "weight": 400},
         "tagline":     {"text": "昼法夜维 - 白天学法，晚上运维", "font": "cjk", "size": 2.0, "weight": 400, "ls": 0.02},
@@ -86,8 +86,8 @@ CARD = {
         "name_main": {"text": "고로드리히", "font": "cjk",  "size": 6.0, "weight": 600, "ls": 0},
         "name_sub":  {"text": "GORODRICH", "font": "mono", "size": 2.5, "weight": 400, "ls": 0.219},
         "title": [
-            {"text": "법학도 ×",        "font": "cjk", "size": 2.4, "weight": 500},
-            {"text": "인프라 엔지니어", "font": "cjk", "size": 2.4, "weight": 500},
+            {"text": "법학도 ×",     "font": "cjk", "size": 2.4, "weight": 500},
+            {"text": "서버 관리자", "font": "cjk", "size": 2.4, "weight": 500},
         ],
         "affiliation": {"text": "주오대학 법학부 법률학과", "font": "cjk", "size": 2.5, "weight": 400},
         "tagline":     {"text": "낮에는 법학도, 밤에는 서버장", "font": "cjk", "size": 2.2, "weight": 400, "ls": 0.01},
@@ -101,7 +101,7 @@ CARD = {
 UI = {
     "ja": {
         "card_title": "ゴロードリヒ | デジタル名刺",
-        "card_desc": "中央大学 法学部の法学生 兼 インフラエンジニア、ゴロードリヒのデジタル名刺。連絡先とポートフォリオはこちらから。",
+        "card_desc": "中央大学 法学部の法学生 兼 サーバー管理者、ゴロードリヒのデジタル名刺。連絡先とポートフォリオはこちらから。",
         "pf_title": "ポートフォリオ | ゴロードリヒ",
         "pf_desc": "ゴロードリヒのポートフォリオ。自己紹介・経歴・スキル・実績をまとめています。",
         "lang_menu": "言語",
@@ -133,7 +133,7 @@ UI = {
     },
     "en": {
         "card_title": "GORODRICH | Digital Business Card",
-        "card_desc": "Digital business card of Gorodrich — law student at Chuo University and infrastructure engineer. Contact details and portfolio.",
+        "card_desc": "Digital business card of Gorodrich — law student at Chuo University and server administrator. Contact details and portfolio.",
         "pf_title": "Portfolio | GORODRICH",
         "pf_desc": "Portfolio of Gorodrich: about me, career history, skills and selected work.",
         "lang_menu": "Language",
@@ -165,7 +165,7 @@ UI = {
     },
     "zh": {
         "card_title": "五郎德里希 | 电子名片",
-        "card_desc": "中央大学法学院学生兼基础架构工程师五郎德里希的电子名片。可在此查看联系方式与作品集。",
+        "card_desc": "中央大学法学院学生兼服务器管理员五郎德里希的电子名片。可在此查看联系方式与作品集。",
         "pf_title": "作品集 | 五郎德里希",
         "pf_desc": "五郎德里希的作品集，收录自我介绍、履历、技能与项目实绩。",
         "lang_menu": "语言",
@@ -197,7 +197,7 @@ UI = {
     },
     "ko": {
         "card_title": "고로드리히 | 디지털 명함",
-        "card_desc": "주오대학 법학부 재학생이자 인프라 엔지니어인 고로드리히의 디지털 명함. 연락처와 포트폴리오를 확인하세요.",
+        "card_desc": "주오대학 법학부 재학생이자 서버 관리자인 고로드리히의 디지털 명함. 연락처와 포트폴리오를 확인하세요.",
         "pf_title": "포트폴리오 | 고로드리히",
         "pf_desc": "고로드리히의 포트폴리오. 자기소개, 경력, 기술 스택, 작업물을 정리했습니다.",
         "lang_menu": "언어",
